@@ -23,11 +23,7 @@ def index():
     return render_template("test.html")
 
 @app.route('/send_email',methods=['POST'])
-# def send_email(to, subject, body):
-def send_email():
-    subject="tesT"
-    to="test.testington.788@gmail.com"
-    body="testing email generation"
+def send_email(to, subject, body):
     msg = Message(subject, recipients=[to], body=body)
     mail.send(msg)
 
